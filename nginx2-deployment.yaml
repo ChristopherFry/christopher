@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx2
+  namespace: chris
+  labels:
+    app: nginx2
+  annotations:
+    config.kubernetes.io/depends-on: apps/namespaces/chris/Deployment/nginx2
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nginx2
+  template:
+    metadata:
+      labels:
+        app: nginx2
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.14.2
+        ports:
+        - containerPort: 80
