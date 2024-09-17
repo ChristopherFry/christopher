@@ -6,7 +6,7 @@ metadata:
   labels:
     app: nginx2
   annotations:
-    config.kubernetes.io/depends-on: apps/namespaces/chris/Deployment/nginx2
+    config.kubernetes.io/depends-on: apps/namespaces/chris/Deployment/nginx1
 spec:
   replicas: 2
   selector:
