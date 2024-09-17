@@ -6,7 +6,7 @@ metadata:
   labels:
     app: nginx1
   annotations:
-    config.kubernetes.io/depends-on: core/namespaces/chris/Service/chris-lb
+    config.kubernetes.io/depends-on: /namespaces/chris/Service/chris-lb
 spec:
   replicas: 2
   selector:
