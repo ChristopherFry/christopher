@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: chris-lb
+  namespace: chris
+spec:
+  selector:
+    app: nginx1
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 9376
+  type: LoadBalancer
