@@ -1,0 +1,15 @@
+apiVersion: container.cnrm.cloud.google.com/v1beta1
+kind: ContainerCluster
+metadata:
+  name: gke-20
+spec:
+  location: us-central1-a
+  initialNodeCount: 1
+  nodeConfig:
+    machineType: "e2-standard-4"
+  releaseChannel:
+    channel: RAPID
+  workloadIdentityConfig:
+    # Workload Identity supports only a single namespace based on your project name.
+    # Replace cdrollouts-christopherfry-0411 below with your project ID.
+    workloadPool: cdrollouts-christopherfry-0411.svc.id.goog
