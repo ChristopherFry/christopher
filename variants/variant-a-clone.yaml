@@ -13,6 +13,8 @@ kind: Deployment
 metadata:
   name: nginx1
   namespace: a
+  annotations:
+    client.lifecycle.config.k8s.io/deletion: detach
   labels:
     app: nginx1
 spec:
